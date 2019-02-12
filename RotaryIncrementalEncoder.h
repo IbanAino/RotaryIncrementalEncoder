@@ -1,10 +1,18 @@
 /*
+The Rotary Incremental Encoder class implements encodrs.
 
 
+// WARNING :
+This class uses iterrupts with staic methods and members.
+That is why static members have to be declared when the class is instancied.
+It is the only particularitie you have to deal with.
 
 
-
-
+This class is optimize to the Arduino Mega 2560 board.
+The first encoder is plugged to pins 2 and 3.
+The sescond encoder is plugged to pins 18 and 19.
+You can change this values inside the cpp file.
+You can upgrade the code to add a third encoder, plugged to pins 20 and 21.
 */
 
 #ifndef EncoderHallEffect_h

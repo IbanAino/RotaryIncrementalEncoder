@@ -6,6 +6,8 @@
 //*** ATTRIBUTS ***
 
 // Initialize static members of class EncoderHallEffect
+// Because the RotaryIncrementalEncoder uses interrupts with static
+// methods and members this step is needed.
 int16_t EncoderHallEffect::encoderRotationRightCounter;
 int16_t EncoderHallEffect::encoderRotationLeftCounter;
 uint16_t EncoderHallEffect::encoderSpeedRightCounter;
