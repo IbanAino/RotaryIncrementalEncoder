@@ -3,7 +3,7 @@
 
 
 // CONSTRUCTOR
-EncoderHallEffect::EncoderHallEffect(uint8_t encoderID){
+RotaryIncrementalEncoder::RotaryIncrementalEncoder(uint8_t encoderID){
 
   this -> encoderID = encoderID; // two encoders availables : encoder 1 and encoder 2
 
@@ -33,8 +33,8 @@ EncoderHallEffect::EncoderHallEffect(uint8_t encoderID){
 
 
 // FUNCTIONS
-void EncoderHallEffect::StartSpeedMeasurement(){
-  flagEMeasureSpeed = true;
+void RotaryIncrementalEncoder::StartSpeedMeasurement(){
+  flagMeasureSpeed = true;
   
   // Reset couteres and timer
   encoderSpeedRightCounter = 0;
@@ -42,11 +42,11 @@ void EncoderHallEffect::StartSpeedMeasurement(){
   timeMilllisecond = millis();
 }
 
-void EncoderHallEffect::StopSpeedMeasurement(){
-  flagEMeasureSpeed = false;
+void RotaryIncrementalEncoder::StopSpeedMeasurement(){
+  flagMeasureSpeed = false;
 }
 
-int16_t EncoderHallEffect::GetSpeed(){
+int16_t RotaryIncrementalEncoder::GetSpeed(){
   
   if(encoderID == 1){
     int16_t motorSpeed = (encoderSpeedRightCounter * 100)/(millis() - timeMilllisecond);
@@ -62,15 +62,15 @@ int16_t EncoderHallEffect::GetSpeed(){
   } 
 }
 
-void EncoderHallEffect::StartRotationMeasurement(){
+void RotaryIncrementalEncoder::StartRotationMeasurement(){
   flagMeasureRotation = true;
 }
 
-void EncoderHallEffect::StopRotationMeasurement(){
+void RotaryIncrementalEncoder::StopRotationMeasurement(){
   flagMeasureRotation = false;
 }
 
-int16_t EncoderHallEffect::GetRotation(){
+int16_t RotaryIncrementalEncoder::GetRotation(){
   switch(encoderID){
     case 1 :
       return(encoderRotationRightCounter);
@@ -82,9 +82,9 @@ int16_t EncoderHallEffect::GetRotation(){
 }
 
 // Encoder 1
-static void EncoderHallEffect::handleInterruptA(){
+static void RotaryIncrementalEncoder::handleInterruptA(){
   // Speed measurement
-  if(flagEMeasureSpeed){
+  if(flagMeasureSpeed){
     encoderSpeedRightCounter++;
   }
   
@@ -107,9 +107,9 @@ static void EncoderHallEffect::handleInterruptA(){
 }
 
 // Encoder 2
-void EncoderHallEffect::handleInterruptC(){
+void RotaryIncrementalEncoder::handleInterruptC(){
   // Speed measurement
-  if(flagEMeasureSpeed){
+  if(flagMeasureSpeed){
     encoderSpeedLeftCounter++;
   }
   

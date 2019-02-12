@@ -15,16 +15,16 @@ You can change this values inside the cpp file.
 You can upgrade the code to add a third encoder, plugged to pins 20 and 21.
 */
 
-#ifndef EncoderHallEffect_h
-#define EncoderHallEffect_h
+#ifndef RotaryIncrementalEncoder_h
+#define RotaryIncrementalEncoder_h
 
 #include <arduino.h>
 
-class EncoderHallEffect
+class RotaryIncrementalEncoder
 {
   public:
     // Constructor
-    EncoderHallEffect(uint8_t encoderID);
+    RotaryIncrementalEncoder(uint8_t encoderID);
 
     // Functions
 
@@ -59,7 +59,7 @@ class EncoderHallEffect
     static int16_t encoderRotationLeftCounter;
     static uint16_t encoderSpeedRightCounter;
     static uint16_t encoderSpeedLeftCounter;
-    static bool flagEMeasureSpeed; 
+    static bool flagMeasureSpeed; 
     static bool flagMeasureRotation;   
 };
 #endif

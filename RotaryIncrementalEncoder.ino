@@ -5,20 +5,20 @@
 
 //*** ATTRIBUTS ***
 
-// Initialize static members of class EncoderHallEffect
+// Initialize static members of class RotaryIncrementalEncoder
 // Because the RotaryIncrementalEncoder uses interrupts with static
 // methods and members this step is needed.
-int16_t EncoderHallEffect::encoderRotationRightCounter;
-int16_t EncoderHallEffect::encoderRotationLeftCounter;
-uint16_t EncoderHallEffect::encoderSpeedRightCounter;
-uint16_t EncoderHallEffect::encoderSpeedLeftCounter;
-bool EncoderHallEffect::flagEMeasureSpeed;
-bool EncoderHallEffect::flagMeasureRotation;
+int16_t RotaryIncrementalEncoder::encoderRotationRightCounter;
+int16_t RotaryIncrementalEncoder::encoderRotationLeftCounter;
+uint16_t RotaryIncrementalEncoder::encoderSpeedRightCounter;
+uint16_t RotaryIncrementalEncoder::encoderSpeedLeftCounter;
+bool RotaryIncrementalEncoder::flagMeasureSpeed;
+bool RotaryIncrementalEncoder::flagMeasureRotation;
 
 
 //*** OBJECTS DECLARATIONS ***
-EncoderHallEffect* Encoder1;
-EncoderHallEffect* Encoder2;
+RotaryIncrementalEncoder* Encoder1;
+RotaryIncrementalEncoder* Encoder2;
 
 //*** SETUP ***
 void setup() {
@@ -27,8 +27,8 @@ void setup() {
   Serial.println("Start programm");
 
   // Objects instanciations
-  Encoder1 = new EncoderHallEffect(1);
-  Encoder2 = new EncoderHallEffect(2);
+  Encoder1 = new RotaryIncrementalEncoder(1);
+  Encoder2 = new RotaryIncrementalEncoder(2);
   
   Encoder1->StartRotationMeasurement();
   //Encoder1->StartSpeedMeasurement();
