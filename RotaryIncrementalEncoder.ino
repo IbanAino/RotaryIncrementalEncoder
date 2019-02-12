@@ -18,6 +18,7 @@ bool EncoderHallEffect::flagMeasureRotation;
 
 //*** OBJECTS DECLARATIONS ***
 EncoderHallEffect* Encoder1;
+EncoderHallEffect* Encoder2;
 
 //*** SETUP ***
 void setup() {
@@ -27,16 +28,22 @@ void setup() {
 
   // Objects instanciations
   Encoder1 = new EncoderHallEffect(1);
+  Encoder2 = new EncoderHallEffect(2);
   
-  //Encoder1->StartRotationMeasurement();
-  Encoder1->StartSpeedMeasurement();
+  Encoder1->StartRotationMeasurement();
+  //Encoder1->StartSpeedMeasurement();
+
+  Encoder2->StartRotationMeasurement();
+  //Encoder2->StartSpeedMeasurement();
 }
 
 //*** MAIN LOOP ***
 void loop() {
 
-  //Serial.println(Encoder1->GetRotation());
-  Serial.println(Encoder1->GetSpeed());
+  Serial.print(Encoder1->GetRotation());
+  Serial.print(", ");
+  Serial.print(Encoder2->GetRotation());
+  Serial.println();
 
   delay(100);
 }

@@ -12,7 +12,7 @@ EncoderHallEffect::EncoderHallEffect(uint8_t encoderID){
   // Encoder 1 sensors A and B
   hardwarePinEncoderSensorA = 2;
   hardwarePinEncoderSensorB = 3;
-  // Encoder 2 sensors C and D
+  //Encoder 2 sensors C and D
   hardwarePinEncoderSensorC = 18;
   hardwarePinEncoderSensorD = 19;
 
@@ -115,14 +115,14 @@ void EncoderHallEffect::handleInterruptC(){
   
   // Rotation measurement
   if(flagMeasureRotation){
-    if (digitalRead(2) == HIGH) {
-      if (digitalRead(3) == LOW) {
+    if (digitalRead(18) == HIGH) {
+      if (digitalRead(19) == LOW) {
         encoderRotationLeftCounter++;
       } else {
         encoderRotationLeftCounter--;
       }
     } else {
-      if (digitalRead(3) == LOW) {
+      if (digitalRead(19) == LOW) {
         encoderRotationLeftCounter--;
       } else {
         encoderRotationLeftCounter++;
