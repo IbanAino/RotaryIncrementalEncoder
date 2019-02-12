@@ -1,6 +1,6 @@
 //*** LIBRARIES ***
 #include <arduino.h>
-#include "EncoderHallEffect.h"
+#include "RotaryIncrementalEncoder.h"
 
 
 //*** ATTRIBUTS ***

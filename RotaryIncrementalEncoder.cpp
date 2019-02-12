@@ -1,4 +1,4 @@
-#include "EncoderHallEffect.h"
+#include "RotaryIncrementalEncoder.h"
 #include <arduino.h>
 
 
@@ -20,9 +20,6 @@ EncoderHallEffect::EncoderHallEffect(uint8_t encoderID){
   pinMode(hardwarePinEncoderSensorB, INPUT_PULLUP);
   pinMode(hardwarePinEncoderSensorC, INPUT_PULLUP);
   pinMode(hardwarePinEncoderSensorD, INPUT_PULLUP);
-
-  //attachInterrupt(digitalPinToInterrupt(hardwarePinEncoderSensorA), handleInterruptA, CHANGE); // Motor 1
-  //attachInterrupt(digitalPinToInterrupt(hardwarePinEncoderSensorC), handleInterruptC, CHANGE); // Motor 2
 
   switch(encoderID){
     case 1 :
@@ -84,7 +81,7 @@ int16_t EncoderHallEffect::GetRotation(){
   }
 }
 
-
+// Encoder 1
 static void EncoderHallEffect::handleInterruptA(){
   // Speed measurement
   if(flagEMeasureSpeed){
@@ -109,6 +106,7 @@ static void EncoderHallEffect::handleInterruptA(){
   }
 }
 
+// Encoder 2
 void EncoderHallEffect::handleInterruptC(){
   // Speed measurement
   if(flagEMeasureSpeed){

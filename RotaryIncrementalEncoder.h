@@ -1,3 +1,12 @@
+/*
+
+
+
+
+
+
+*/
+
 #ifndef EncoderHallEffect_h
 #define EncoderHallEffect_h
 
