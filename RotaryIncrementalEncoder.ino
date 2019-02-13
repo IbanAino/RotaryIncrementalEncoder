@@ -3,14 +3,6 @@
 #include "RotaryIncrementalEncoder.h"
 
 
-//*** ATTRIBUTS ***
-
-// Initialize static members of class RotaryIncrementalEncoder.
-// This step is needed because the RotaryIncrementalEncoder uses interrupts with static
-// methods and members.
-
-
-
 //*** OBJECTS DECLARATIONS ***
 RotaryIncrementalEncoder* Encoder1;
 RotaryIncrementalEncoder* Encoder2;
