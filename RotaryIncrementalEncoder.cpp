@@ -1,6 +1,12 @@
 #include "RotaryIncrementalEncoder.h"
 #include <arduino.h>
 
+int16_t RotaryIncrementalEncoder::encoderRotationRightCounter;
+int16_t RotaryIncrementalEncoder::encoderRotationLeftCounter;
+uint16_t RotaryIncrementalEncoder::encoderSpeedRightCounter;
+uint16_t RotaryIncrementalEncoder::encoderSpeedLeftCounter;
+bool RotaryIncrementalEncoder::flagMeasureSpeed;
+bool RotaryIncrementalEncoder::flagMeasureRotation;
 
 // CONSTRUCTOR
 RotaryIncrementalEncoder::RotaryIncrementalEncoder(uint8_t encoderID){
